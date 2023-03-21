@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Mozilla is cool</h1>
+    <img
+      src="images/firefox-icon.png"
+      alt="The Firefox logo: a flaming fox surrounding the Earth."
+    />
+
+    <p>At Mozilla, we’re a global community of</p>
+
+    <ul>
+      <!-- changed to list in the tutorial -->
+      <li>technologists</li>
+      <li>thinkers</li>
+      <li>builders</li>
+    </ul>
+
+    <p>
+      working together to keep the Internet alive and accessible, so people
+      worldwide can be informed contributors and creators of the Web. We believe
+      this act of human collaboration across an open platform is essential to
+      individual growth and our collective future.
+    </p>
+
+    <p>
+      Read the
+      <a href="https://www.mozilla.org/en-US/about/manifesto/"
+        >Mozilla Manifesto</a
+      >
+      to learn even more about the values and principles that guide the pursuit
+      of our mission.
+    </p>
+    <button>Change user</button>
+    <script src="main.js"></script>
+    <!-- <script> internal
+      document.addEventListener("DOMContentLoaded", () => {
+        //This line of code adds an event listener to the document object in the web browser.
+        //Specifically, it listens for the "DOMContentLoaded" event, which is fired when the HTML document has been completely loaded and parsed by the browser.
+        //By using this event listener, you can be ensured that the JavaScript code is executed only after the HTML document has been fully loaded,
+        //which can be important for preventing errors and ensuring that the page behaves as intended.
+        function createParagraph() {
+          const para = document.createElement("p");
+          para.textContent = "You clicked the button!";
+          document.body.appendChild(para);
+        }
+
+        const buttons = document.querySelectorAll("button"); //select all buttons
+
+        for (const button of buttons) {
+          button.addEventListener("click", createParagraph);
+        }
+      }); -->
+      <script src="script.js" defer></script><!--external: defer tells the browser to continue downloading the HTML content once the <script> tag element has been reached.
+        To summarize, the main difference between async and defer is that async downloads and executes the script as soon as it becomes available, while defer downloads the 
+        script in the background but waits to execute it until the entire page has finished parsing. It is generally recommended to use defer whenever possible to avoid 
+        potential issues with script dependencies.
+
+        Both async and defer are used to load external scripts in a non-blocking way, which means that they won't block 
+        the page from loading while the script is being downloaded.
+
+        The difference between them is that async will execute the script as soon as it's downloaded, even if the page hasn't finished loading yet, while defer will wait until 
+        the page has finished loading before executing the script. 
+
+        So, if the script doesn't rely on anything else on the page, you can use async for faster loading, but if the script 
+        depends on other elements on the page, it's better to use defer to make sure everything is available when the script is executed. 
+
+        "async" should be used when you have a bunch of background scripts to load in, and you just want to get them in place as soon as possible. 
+        For example, maybe you have some game data files to load, which will be needed when the game actually begins, but for now you just want to 
+        get on with showing the game intro, titles, and lobby, without them being blocked by script loading.
+
+        SUMMARIZE: async and defer both instruct the browser to download the script(s) in a separate thread, while the rest of the page (the DOM, etc.) 
+        is downloading, so the page loading is not blocked during the fetch process.
+        -Scripts with an async attribute will execute as soon as the download is complete. This blocks the page and does not guarantee any specific execution order.
+        -Scripts with a defer attribute will load in the order they are in and will only execute once everything has finished loading.
+        -If your scripts should be run immediately and they don't have any dependencies, then use async.
+        -If your scripts need to wait for parsing and depend on other scripts and/or the DOM being in place, load them using defer and put their corresponding <script> 
+        elements in the order you want the browser to execute them.
+      -->
+    </script>
+  </body>
+</html>
